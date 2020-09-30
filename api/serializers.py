@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from shoestore.models import Shoe
+from shoestore.models import Shoe, ShoeColor, ShoeType, Manufacturer
 
 class ShoeSerializer(serializers.ModelSerializer):
     color = serializers.StringRelatedField(many=False)
@@ -16,4 +16,27 @@ class ShoeSerializer(serializers.ModelSerializer):
             'material',
             'shoe_type', 
             'fasten_type'
+        ]
+
+class ManufacturerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Manufacturer
+        fields = [
+            'name',
+            'website',
+        ]
+
+
+class ShoeTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model =  ShoeType
+        fields = [
+            'style'
+        ]
+
+class ShoeColorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ShoeColor
+        fields = [
+            'color'
         ]

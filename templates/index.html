@@ -1,3 +1,8 @@
 <h1>Homepage</h1>
 
-{% shoes %}
+  {% for shoe in shoes %}
+    <li>
+      {{ shoe.color }}
+      {{ }}
+    </li>
+  {% endfor %}

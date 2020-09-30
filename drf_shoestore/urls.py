@@ -23,6 +23,9 @@ from api import views as api_views
 
 router = routers.DefaultRouter()
 router.register(r"shoe", api_views.ShoeViewSet)
+router.register(r"manufacturer", api_views.ManufacturerViewSet)
+router.register(r"shoe_color", api_views.ShoeColorViewSet)
+router.register(r"shoe_type", api_views.ShoeTypeViewSet)
 
 urlpatterns = [
     path('', views.index_view),
